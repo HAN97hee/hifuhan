@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:type" content="website"> 
+    <meta property="og:image" content="img/app-link_logo">
+    <meta property="og:url" content="http://jhi5446396.dothome.co.kr">
+    <meta property="og:description" content="우주최강">
+    <meta property="og:title" content="하이퍼니처">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>하이퍼니처 한재희</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/파비콘.jpg" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- header html -->
+    <header>
+        <div class="naver pc">
+            <a href="http://naver.com" target="_blank">네이버페이 5% 할인쿠폰 증정 이벤트 +</a>
+        </div>
+
+        <div class="cup pc">
+            <a href="#">회원가입시 바로 사용 가능한 할인쿠폰 증정 +</a>
+        </div>
+        <!-- 헤더 -->
+            <div class="hed pc">
+                <h1><a href="index.html"><img src="img/logo.png" alt="하이퍼니처 브랜드 로고"></a></h1>
+    
+                        <ul class="gnb">
+                            <li><a href="#">추천</a></li>
+                            <li><a href="#">랭킹</a></li>
+                            <li><a href="#">특가&세일</a></li>
+                            <li><a href="#">세트&기획전</a></li>
+                            <li><a href="#">MVME</a></li>
+                        </ul>
+                    
+    
+                    <ul class="snb">
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#"><i class="xi-hamburger-out"></i>로그인</a></li>
+                    </ul>
+            </div>
+    
+        <!-- 모바일 헤더 html -->
+        <div class="mob">
+            <h1><a href="index.html"><img src="img/hi-mob_logo.jpg" alt="하이퍼니처 모바일 로고"></a></h1>
+            <button><i class="xi-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- 서브페이지 html table -->
+    <section id="table">
+        <h2 class="blind">식탁페이지 선택</h2>
+
+        <div class="wrap">
+            <div class="svlist">
+                <select name="listbox" id="listbox">
+                    <option value="식탁" selected>식탁</option>
+                    <option value="의자">의자</option>
+                    <option value="책상">책상</option>
+                    <option value="소파">소파</option>
+                    <option value="화장대">화장대</option>
+                    <option value="책장">책장</option>
+                </select>
+            </div>
+
+            <div class="search">
+                <input type="text" placeholder="검색어를 입려하세요.">
+                <button><i class="xi-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- svpage table2  -->
+    <section id="table2">
+        <h2 class="blind">선택항목</h2>
+
+        <div class="wrap">
+            <!-- 필터 박스 -->
+            <div class="filterbox pc">
+                <select name="모든필터" id="allfilter1">
+                    <option value="모든필터" selected>모든필터</option>
+                </select>
+                <select name="집/사무/야외" id="allfilter2">
+                    <option value="집/사무/야외" selected>집/사무/야외</option>
+                    <option value="집">집</option>
+                    <option value="사무">사무</option>
+                    <option value="삼">사무</option>
+                </select>
+                <select name="배송" id="allfilter3">
+                    <option value="배송" selected>배송</option>
+                    <option value="무료배송">무료배송</option>
+                </select>
+                <select name="컬러계열" id="allfilter4">
+                    <option value="컬러계열" selected>컬러계열</option>
+                    <option value="우드" style="color: saddlebrown;">우드</option>
+                    <option value="그린" style="color: green;">그린</option>
+                    <option value="챠콜" style="color: #4e4d4d;">챠콜</option>
+                </select>
+                <select name="세트상품" id="allfilter5">
+                    <option value="세트상품" selected>세트상품</option>
+                    <option value="전체세트">전체세트</option>
+                    <option value="부분세트">부분세트</option>
+                </select>
+                <select name="자재등급" id="allfilter6">
+                    <option value="자재등급" selected>자재등급</option>
+                    <option value="SSS">SSS</option>
+                    <option value="SS">SS</option>
+                    <option value="S">S</option>
+                </select>
+                <select name="소재" id="allfilter7">
+                    <option value="소재" selected>소재</option>
+                    <option value="단풍나무">단풍나무</option>
+                    <option value="소나무">소나무</option>
+                    <option value="편백나무">편백나무</option>
+                    <option value="집성목">집성목</option>
+                </select>
+                <select name="사용인원" id="allfilter8">
+                    <option value="사용인원" selected>사용인원</option>
+                    <option value="1~2">1~2</option>
+                    <option value="3~4">3~4</option>
+                    <option value="5">5 ~</option>
+                </select>
+                <select name="가격" id="allfilter9">
+                    <option value="가격" selected>가격</option>
+                    <option value="10만원 이하">10만원 이하</option>
+                    <option value="10~30만">10~30만</option>
+                    <option value="30~100만">30~100만</option>
+                    <option value="100만원 이상">100만원 이상</option>
+                </select>
+                <select name="테이블형태" id="allfilter10">
+                    <option value="테이블형태" selected>테이블형태</option>
+                    <option value="원형">원형</option>
+                    <option value="사각형">사각형</option>
+                    <option value="그외">그외</option>
+                </select>
+                <select name="DIY/시공" id="allfilter11">
+                    <option value="DIY/시공" selected>DIY/시공</option>
+                </select>
+            </div>
+
+            <!-- 모바일 필터버튼 -->
+            <div class="filtermob mob">
+                <button><i class="xi-apps"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- svpage table3 -->
+    <section id="table3">
+        <h2 class="blind">상품목록</h2>
+        <!-- 인기상품 갯수별보기 항목 -->
+        <div class="wrap ta1">
+            <h3>전체 173건</h3>
+
+            <div class="pc">
+                <select name="상품순" id="">
+                    <option value="인기상품순" selected>인기상품순</option>
+                    <option value="최다검색순">최다검색순</option>
+                    <option value="최다판매순">최다판매순</option>
+                </select>
+            </div>
+
+            <div class="pc">
+                <select name="화면갯수" id="">
+                    <option value="12개씩 보기" selected>12개씩 보기</option>
+                    <option value="16개씩 보기">16개씩 보기</option>
+                    <option value="20개씩 보기">20개씩 보기</option>
+                    <option value="32개씩 보기">32개씩 보기</option>
+                </select>
+            </div>
+        </div>
+        <!-- 상품목록 부분 -->
+        <div class="wrap tabox">
+            <ul>
+                <li>
+                    <a href="상세페이지.html">
+                        <img src="img/상품식탁1.png" alt="디움보 식탁 세트 4인">
+                        <h3>하이퍼니처</h3>
+                        <i class="xi-bookmark-o"></i>
+                        <p>디움보 식탁 세트 4인<br>633,000원</p>
+                        <span><i class="xi-star-o"></i>4.5(86)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="img/상품식탁2.png" alt="메이플 식탁 세트 2인">
+                        <h3>하이퍼니처</h3>
+                        <i class="xi-bookmark-o"></i>
+                        <p>메이플 식탁 세트 2인<br>160,000원</p>
+                        <span><i class="xi-star-o"></i>4.8(186)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="img/상품식탁3.png" alt="원형 다사 식탁">
+                        <h3>하이퍼니처</h3>
+                        <i class="xi-bookmark-o"></i>
+                        <p>원형 다사 식탁<br>86,000원</p>
+                        <span><i class="xi-star-o"></i>4.1(36)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="img/상품식탁4.png" alt="심플즈 모던 식탁">
+                        <h3>하이퍼니처</h3>
+                        <i class="xi-bookmark-o"></i>
+                        <p>심플즈 모던 식탁<br>60,000원</p>
+                        <span><i class="xi-star-o"></i>4.7(281)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="img/상품식탁5.png" alt="거실 카페 테이블">
+                        <h3>하이퍼니처</h3>
+                        <i class="xi-bookmark-o"></i>
+                        <p>거실 카페 테이블<br>122,000원</p>
+                        <span><i class="xi-star-o"></i>3.8(16)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="img/상품식탁6.png" alt="모던 리즈영 식탁">
+                        <h3>하이퍼니처</h3>
+                        <i class="xi-bookmark-o"></i>
+                        <p>모던 리즈영 식탁<br>48,000원</p>
+                        <span><i class="xi-star-o"></i>4.0(804)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="img/상품식탁7.png" alt="벨도라도 식탁 세트">
+                        <h3>하이퍼니처</h3>
+                        <i class="xi-bookmark-o"></i>
+                        <p>벨도라도 식탁 세트<br>781,000원</p>
+                        <span><i class="xi-star-o"></i>4.6(7)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="img/상품식탁8.png" alt="유로 아일랜드 식탁033">
+                        <h3>하이퍼니처</h3>
+                        <i class="xi-bookmark-o"></i>
+                        <p>유로 아일랜드 식탁033<br>210,000원</p>
+                        <span><i class="xi-star-o"></i>4.2(55)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="img/상품식탁9.png" alt="대가족 모던 브로 식탁 세트">
+                        <h3>하이퍼니처</h3>
+                        <i class="xi-bookmark-o"></i>
+                        <p>대가족 모던 브로 식탁 세트<br>512,000원</p>
+                        <span><i class="xi-star-o"></i>4.3(37)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="img/상품식탁10.png" alt="브릿지 통 식탁 세트">
+                        <h3>하이퍼니처</h3>
+                        <i class="xi-bookmark-o"></i>
+                        <p>브릿지 통 식탁 세트<br>252,000원</p>
+                        <span><i class="xi-star-o"></i>4.1(88)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="img/상품식탁11.png" alt="디그다 글록 식탁">
+                        <h3>하이퍼니처</h3>
+                        <i class="xi-bookmark-o"></i>
+                        <p>디그다 글록 식탁<br>53,000원</p>
+                        <span><i class="xi-star-o"></i>2.9(11)</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="img/상품식탁12.png" alt="다상오반 식탁 세트">
+                        <h3>하이퍼니처</h3>
+                        <i class="xi-bookmark-o"></i>
+                        <p>다상오반 식탁 세트<br>1,350,000원</p>
+                        <span><i class="xi-star-o"></i>4.5(6)</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- 상품페이지 차례 -->
+            <div class="tanum pc">
+                <ul>
+                    <li><i class="xi-angle-left-min"></i><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">10</a></li>
+                    <li><a href="#">11</a></li>
+                    <li><a href="#">12</a></li>
+                    <li><a href="#">13</a></li>
+                    <li><a href="#">14</a></li>
+                    <li><a href="#">15</a><i class="xi-angle-right-min"></i></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- svpage table4 -->
+    <!-- 광고배너 영역 -->
+    <section id="table4">
+        <h2 class="blind">이벤트광고배너영역</h2>
+
+        <div id="adbanner">
+            <img src="img/킨텍스광고배너.png" alt="킨텍스 상품전시회" class="img">
+            <img src="img/상품페이지-광고배너2.png" alt="광고배너" class="img">
+            <img src="img/상품페이지광고배너3.png" alt="하이퍼니처광고배너" class="img">
+        </div>
+        <script src="상페광고배너.js"></script>
+    </section>
+
+
+
+
+    <!-- notice -->
+    <section id="notice">
+        <h2 class="blind">공지사항, 고객센터</h2>
+
+        <div class="wrap">
+            <!-- 공지사항 -->
+            <div class="not">
+                <h3>공지사항</h3>
+                <ul>
+                    <li><a href="#">[공지] 하이퍼니처 시스템 점검 안내</a></li>
+                    <li><a href="#">[당첨자발표] 23.02.10일자 이벤트 당첨자 발표</a></li>
+                    <li><a href="#">[공지] 원목 수급 문제로 의자3제품 출고일 연기</a></li>
+                    <li><a href="#">[정보] 홈페이지 안내 이용</a></li>
+                </ul>
+            </div>
+            <!-- 고객센터 -->
+            <div class="cs">
+                <h3>고객센터</h3>
+                <ul>
+                    <li><a href="#">자주 찾는 질문</a></li>
+                    <li><a href="#">비회원 주문조회</a></li>
+                    <li><a href="#">1:1 문의</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">하이퍼니처 회원 혜택</a></li>
+                    <li><a href="#">입점문의</a></li>
+                    <li><a href="#">대리점 개설 문의</a></li>
+                </ul>
+                <h4>전화상담 - <a href="tel:16885678">1688-5678</a> / <a href="tel:16888765">1688-8765</a></h4>
+                <h5>A/S 신청, 추가부품 구매<br>서비스센터 - <a href="tel:15880101">1588-0101</a></h5>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 푸터 -->
+    <footer>
+        <h2 class="blind">website information</h2>
+
+        <div class="wrap">
+            <div class="infor">
+                <address>
+                    인천광역시 연수구 가구동 875 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><br class="mob">㈜하이퍼니처 대표 : 한재희</span><br>
+                    사업자등록번호 : 123-45-67899 <br>통신판매업신고 : 1997-인천연수-0101 <br>KEB하나은행 구매안전서비스 <br>
+                    <span>고객님은 안전거래를 위해 현금결제 시 저희 쇼핑몰에서 가입한 KEB하나은행으로<br class="pc">구매안전서비스를 이용하실 수 있습니다.</span>
+                </address>
+            </div>
+
+            <div class="map">
+                <ul>
+                    <li>하이퍼니처 &nbsp;&nbsp;&nbsp;본사</li>
+                    <li>하이퍼니처 &nbsp;&nbsp;&nbsp;공장</li>
+                    <li>하이퍼니처 직영점</li>
+                </ul>
+                <ul>
+                    <li><button>위치보기</button></li>
+                    <li><button>위치보기</button></li>
+                    <li><button>위치보기</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap">
+            <img src="img/logo.png" alt="logo 하이퍼니처">
+        </div>
+    </footer>
+
+</body>
+
+</html>

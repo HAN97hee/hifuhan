@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:type" content="website"> 
+    <meta property="og:image" content="img/app-link_logo">
+    <meta property="og:url" content="http://jhi5446396.dothome.co.kr">
+    <meta property="og:description" content="우주최강">
+    <meta property="og:title" content="하이퍼니처">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>하이퍼니처 한재희</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="img/파비콘.jpg" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- header html -->
+    <header>
+        <div class="naver pc">
+            <a href="http://naver.com" target="_blank">네이버페이 5% 할인쿠폰 증정 이벤트 +</a>
+        </div>
+
+        <div class="cup pc">
+            <a href="#">회원가입시 바로 사용 가능한 할인쿠폰 증정 +</a>
+        </div>
+        <!-- 헤더 -->
+            <div class="hed pc">
+                <h1><a href="index.html"><img src="img/logo.png" alt="하이퍼니처 브랜드 로고"></a></h1>
+    
+                        <ul class="gnb">
+                            <li><a href="# none">HOME</a></li>
+                            <li><a href="# none">SHOP</a></li>
+                            <li><a href="# none">EVENT</a></li>
+                            <li><a href="# none">BRAND</a></li>
+                            <li><a href="# none">COMMUNITY</a></li>
+                        </ul>
+                    
+    
+                    <ul class="snb">
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#"><i class="xi-hamburger-out"></i>로그인</a></li>
+                    </ul>
+
+                    <!-- 헤드 세부네비 슬라이드부분 -->
+                <div class="heddown">
+                    <ul class="down1">
+                        <li><a href="#">하이퍼니처 소개</a></li>
+                        <li><a href="#">회사어쩌구</a></li>
+                        <li><a href="#">회사저쩌구</a></li>
+                        <li><a href="#">하이퍼니처원목</a></li>
+                    </ul>
+
+                    <ul class="down2">
+                        <li><a href="상품페이지.html">식탁</a></li>
+                        <li><a href="상품페이지.html">침대</a></li>
+                        <li><a href="상품페이지.html">의자</a></li>
+                        <li><a href="상품페이지.html">서랍장</a></li>
+                        <li><a href="상품페이지.html">신발장</a></li>
+                        <li><a href="상품페이지.html">화장대</a></li>
+                    </ul>
+
+                    <ul class="down3">
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">당첨자 조회</a></li>
+                        <li><a href="#">지난 응모 확인</a></li>
+                    </ul>
+                </div>
+                </div>
+                
+                
+                <script src="hedfix.js"></script>
+                
+        <!-- 모바일 헤더 html -->
+        <div class="mob">
+            <h1><a href="index.html"><img src="img/hi-mob_logo.jpg" alt="하이퍼니처 모바일 로고"></a></h1>
+            <button><i class="xi-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- main section 1 -->
+    <section id="main">
+        <h2 class="blind">main visual banner bed 3d</h2>
+
+        <div class="wrap pc">
+            <button class="prev"><i class="xi-angle-left"></i></button>
+            <button class="next"><i class="xi-angle-right"></i></button>
+            <canvas id="canvas" width="600" height="650"></canvas>
+            <p><img src="img/360도.jpg" alt="360도 사진"></p>
+            <a href="#">이 상품 보러가기<i class="xi-long-arrow-right"></i></a>
+        </div>
+        <script type="importmap">
+            {
+                "imports": {
+                  "three": "https://unpkg.com/three@0.141.0/build/three.module.js",
+                  "GLTFLoader" : "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js"
+                }
+              }
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.156.1/three.min.js"></script>
+        <!-- three 스크립트 -->
+        <script type="module">
+            import {GLTFLoader} from 'GLTFLoader';
+            import * as THREE from 'three';
+
+            let scene = new THREE.Scene();
+            let renderer = new THREE.WebGLRenderer({
+                canvas : document.querySelector('#canvas'),
+                antialias : true
+            });
+            renderer.OutputEncoding = THREE.sRGBEncoding;
+
+            let camera = new THREE.PerspectiveCamera(35,1);
+            camera.position.set(0,0,4)
+            //순서대로 좌우값,상하값,인아웃값
+            scene.background = new THREE.Color('white');
+            let light = new THREE.DirectionalLight(0xfffff0,3);
+            scene.add(light);
+            
+            let loader = new GLTFLoader();
+            loader.load('three/scene.gltf', function(gltf){
+                scene.add(gltf.scene);
+                function animate(){
+                    requestAnimationFrame(animate)
+                    gltf.scene.rotation.y += 0.01;
+                    gltf.scene.rotation.x += 0.003;
+                    renderer.render(scene, camera);
+                }
+                animate()
+            });
+
+            renderer.render(scene, camera);
+        </script>
+
+        <p class="pc"><span>1/</span>4</p>
+        <!-- 모바일 -->
+        <div class="mobbed mob"><img src="img/woodbed.png" alt="침대사진"></div>
+        <button class="prev mob"><i class="xi-angle-left"></i></button>
+        <button class="next mob"><i class="xi-angle-right"></i></button>
+        <img src="img/360도.jpg" alt="360도사진" class="thre1 mob">
+        <p class="gomob mob"><a href="#"><i class="xi-subdirectory-arrow"></i></a></p>
+    </section>
+
+    <!-- 모바일 비주얼배너 넘김바 -->
+    <ul class="visualbar mob">
+        <li class="select">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <!-- main section 2 -->
+    <section id="main2">
+        <h2 class="blind">인기상품 및 협찬품목 각종코너 영역</h2>
+        <div class="wrap">
+            <div class="popula cl" data-aos="fade-right">
+                <h3 data-aos="fade-right">인기상품</h3>
+                <div class="popbox" data-aos="fade-right">
+                    <select name="pop1" id="pop1">
+                        <option value="침대" selected>침대</option>
+                        <option value="의자">의자</option>
+                        <option value="책상">책상</option>
+                        <option value="식탁">식탁</option>
+                        <option value="서랍장">서랍장</option>
+                    </select>
+                </div>
+            </div>
+
+           <!-- 인기상품 이미지 슬라이드부분 -->
+            <div class="popimg" data-aos="fade-right">
+                <!-- 인기상품 품목별 슬라이드 부분 -->
+                <ul class="침대 on">
+                    <li><a href="#"><img src="img/침대1위.jpg" alt="침대 1위 이미지"><p><span>1위.</span> 편백0.1ss침대</p></a></li>
+                    <li><a href="#"><img src="img/침대2위.jpg" alt="침대 1위 이미지"><p><span>2위.</span> 고무고무 원목</p></a></li>
+                    <li><a href="#"><img src="img/침대3위.jpg" alt="침대 1위 이미지"><p><span>3위.</span> 참죽 원티드침대</p></a></li>
+                    <li><a href="#"><img src="img/침대4위.jpg" alt="침대 1위 이미지"><p><span>4위.</span> 패브릭 퀸침대</p></a></li>
+                    <li><a href="#"><img src="img/침대5위.jpg" alt="침대 1위 이미지"><p><span>5위.</span> 메이플킹 침대</p></a></li>
+                    <li><a href="#"><img src="img/침대6위.png" alt="침대 1위 이미지"><p><span>6위.</span> 아크나느 원목</p></a></li>
+                    <li><a href="#"><img src="img/침대7위.png" alt="침대 1위 이미지"><p><span>7위.</span> 밤비붐 침대</p></a></li>
+                </ul>
+
+                <ul class="의자">
+                    <li><a href="#"><img src="img/의자1위.png" alt="침대 1위 이미지"><p><span>1위.</span> 편백0.1ss침대</p></a></li>
+                    <li><a href="#"><img src="img/의자2위.png" alt="침대 1위 이미지"><p><span>2위.</span> 고무고무 원목</p></a></li>
+                    <li><a href="#"><img src="img/의자3위.png" alt="침대 1위 이미지"><p><span>3위.</span> 참죽 원티드침대</p></a></li>
+                    <li><a href="#"><img src="img/의자4위.png" alt="침대 1위 이미지"><p><span>4위.</span> 패브릭 퀸침대</p></a></li>
+                    <li><a href="#"><img src="img/침대5위.jpg" alt="침대 1위 이미지"><p><span>5위.</span> 메이플킹 침대</p></a></li>
+                    <li><a href="#"><img src="img/침대6위.png" alt="침대 1위 이미지"><p><span>6위.</span> 아크나느 원목</p></a></li>
+                    <li><a href="#"><img src="img/침대7위.png" alt="침대 1위 이미지"><p><span>7위.</span> 밤비붐 침대</p></a></li>
+                </ul>
+            </div>
+
+            <button class="popbtns pc" data-aos="fade-right"><img src="img/nextbtn.gif" alt="다음버튼"></button>
+            <script src="slidepopimg.js"></script>
+
+            <div class="spon" data-aos="fade-left">
+                <div class="spon2 pc">
+                    <a href="#">
+                        <img src="img/가구협찬.jpg" alt="가구협찬이미지">
+                        <p>하이 퍼니처<br>드라마, 영화<br>협찬 13건<br>높은 퀄리티<br>품질 보증<br>협찬가구 보러가기<i class="xi-arrow-right"></i></p>
+                    </a>
+                </div>
+                <a href="#" class="mob"><img src="img/모바일협찬가구.jpg" alt="가구협찬 모바일"></a>
+            </div>
+
+            <div class="office" data-aos="fade-up">
+                
+                <a href="#" class="pc"><img src="img/오피스특가모음.jpg" alt="오피스가구부문">
+                    <div>
+                        <h3>오피스가구 부문</h3>
+                        <p>퍼니럭스리빙</p>
+                        <h4>세트가구 특가 모음전</h4>
+                        <span><i class="xi-angle-left-min"></i>보러가기<i class="xi-angle-right-min"></i></span>
+                    </div>
+                </a>
+                <a href="#" class="mob"><img src="img/모바일오피스가구.jpg" alt="오피스가구특가모음전"></a>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- main section 3 -->
+    <section id="main3">
+        <h2 class="blind">세일품목 알림영역</h2>
+        <div class="sale pc">
+            <img src="img/세일이미지.jpg" alt="세일이미지">
+            <p>23.06.22~23.09.21<br>8개 상품 세일 진행중</p>
+        </div>
+        <div class="sale mob">
+            <div>
+                <img src="img/모바일세일알림.jpg" alt="세일이미지">
+                <p>23.06.22~23.09.21<br>8개 상품 세일 진행중</p>
+            </div>
+        </div>
+
+        <div class="saleimg">
+            <button class="prev pc"><i class="xi-angle-left"></i></button>
+            <button class="next pc"><i class="xi-angle-right"></i></button>
+            <i class="xi-arrows-h mob"></i>
+            <!-- 세일상품 이미지 슬라이드구역 -->
+            <ul class="saleslide">
+                <li><a href="#">
+                        <img src="img/세일품목1.png" alt="눅 데이베드 쇼파">
+                        <h3>1.눅 데이베드 쇼파</h3>
+                        <h4 style="color: white;">White | <span style="color: beige;">beige</span> | <span style="color: gray;">gray</span></h4>
+                        <p><span style="color: yellow; font-size: 18px;">25&#37;</span>_<span style="text-decoration: line-through;">105,000</span>
+                            &#62;<span style="color: red;">78,750</span>원</p>
+                    </a>
+                </li>
+
+                <li class="select"><a href="#">
+                        <img src="img/세일품목2.png" alt="슬라이딩 옷장">
+                        <h3>2.슬라이딩 옷장/행거/장롱/수납장</h3>
+                        <h4 style="color: white;">White | <span style="color: beige;">beige</span> | <span style="color: gray;">gray</span></h4>
+                        <p><span style="color: yellow; font-size: 18px;">38&#37;</span>_<span style="text-decoration: line-through;">295,000</span>
+                            &#62;<span style="color: red;">182,900</span>원</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/세일품목3.png" alt="안데르센 이층 침대ss">
+                        <h3>3.안데르센 이층 침대ss</h3>
+                        <h4 style="color: white;">White  | <span style="color: grey;">gray</span> | <span style="color: green;">green</span></h4>
+                        <p><span style="color: yellow; font-size: 18px;">42&#37;</span>_<span style="text-decoration: line-through;">230,000</span>
+                            &#62;<span style="color: red;">133,400</span>원</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/세일품목4.png" alt="라로퍼니처 식탁세트">
+                        <h3>4.라로퍼니 식탁세트</h3>
+                        <h4 style="color: white;">White | <span style="color: #765347;">Wood</span></h4>
+                        <p><span style="color: yellow; font-size: 18px;">35&#37;</span>_<span style="text-decoration: line-through;">880,000</span>
+                            &#62;<span style="color: red;">372,000</span>원</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/세일품목5.png" alt="단풍의자">
+                        <h3>5.단풍의자</h3>
+                        <h4 style="color: white;">White | <span style="color: #765347;">Wood</span></h4>
+                        <p><span style="color: yellow; font-size: 18px;">50&#37;</span>_<span style="text-decoration: line-through;">60,000</span>
+                            &#62;<span style="color: red;">30,000</span>원</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/세일품목6.png" alt="마케도니아 화장대">
+                        <h3>6.마케도니아 화장대</h3>
+                        <h4 style="color: white;">White  | <span style="color: gray;">gray</span> | <span style="color: green;">green</span></h4>
+                        <p><span style="color: yellow; font-size: 18px;">30&#37;</span>_<span style="text-decoration: line-through;">90,000</span>
+                            &#62;<span style="color: red;">60,000</span>원</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/세일품목7.png" alt="원목 다니엘 거실장">
+                        <h3>7.원목 다니엘 거실장</h3>
+                        <h4 style="color: white;">White | <span style="color: #765347;">Wood</span> | <span style="color: gray;">gray</span></h4>
+                        <p><span style="color: yellow; font-size: 18px;">22&#37;</span>_<span style="text-decoration: line-through;">350,000</span>
+                            &#62;<span style="color: red;">273,000</span>원</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/세일품목8.png" alt="펴나나다 킹 침대">
+                        <h3>8.펴나나다 킹 침대</h3>
+                        <h4 style="color: white;">White | <span style="color: #765347;">Wood</span></h4>
+                        <p><span style="color: yellow; font-size: 18px;">30&#37;</span>_<span style="text-decoration: line-through;">600,000</span>
+                            &#62;<span style="color: red;">400,000</span>원</p>
+                    </a>
+                </li>
+
+                
+            </ul>
+        </div>
+        <script src="saleslide.js"></script>
+    </section>
+
+
+    <!-- main section 4 -->
+    <section id="main4">
+        <h2 class="blind">MD 추천 상품</h2>
+        
+        <div class="wrap">
+            <h3>MD 추천 상품</h3>
+            <!-- MD추천상품 리스트 -->
+            <ul>
+                <li><a href="#">
+                        <img src="img/추천상품1.jpg" alt="위든 식탁의자">
+                        <h4>위든 식탁의자</h4>
+                        <p>68,000원</p>
+                    </a>
+                </li>
+
+                <li><a href="상품페이지.html">
+                        <img src="img/추천상품2.jpg" alt="도노 세라믹 식탁">
+                        <h4>도노 세라믹 식탁</h4>
+                        <p>145,000원</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/추천상품3.jpg" alt="릴렉스 리빙 의자">
+                        <h4>릴렉스 리빙 의자</h4>
+                        <p>166,000원</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/추천상품4.jpg" alt="그로브 와이드 의자">
+                        <h4>그로브 와이드 의자</h4>
+                        <p>99,000원</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/추천상품5.jpg" alt="홈바 테이블 조리대">
+                        <h4>홈바 테이블 조리대</h4>
+                        <p>265,000원</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/추천상품6.jpg" alt="샤인 드리버 조리대">
+                        <h4>샤인 드리버 조리대</h4>
+                        <p>120,000원</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/추천상품7.jpg" alt="편백 그리드 책장">
+                        <h4>편백 그리드 책장</h4>
+                        <p>98,000원</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/추천상품8.jpg" alt="우드몽드 이층침대">
+                        <h4>우드몽드 이층침대</h4>
+                        <p>480,000원</p>
+                    </a>
+                </li>
+            </ul>
+            <a href="#">MD 추천 상품 바로가기<i class="xi-angle-right"></i></a>
+        </div>
+
+    </section>
+
+    <!-- main section 5 -->
+    <section id="main5">
+        <h2 class="blind">상품목록</h2>
+
+        <div class="wrap">
+            <h3>상품목록</h3>
+            <div>
+                <select name="list1" id="list1">
+                    <option value="m5bed" selected>침대</option>
+                    <option value="m5chr">의자</option>
+                    <option value="책상">책상</option>
+                    <option value="식탁">식탁</option>
+                    <option value="서랍장">서랍장</option>
+                    <option value="옷장">옷장</option>
+                </select>
+            </div>
+            <a href="#">[ 전체상품 보러가기 ]</a>
+            <!-- 전용 상품목록 리스트 -->
+            <ul class="m5bed on">
+                <li><a href="#">
+                        <img src="img/전용상품침대1.jpg" alt="아임빅 수납장 ss 침대">
+                        <p>아임빅 수납장 ss 침대<br>280,000원<br>상품 보러가기</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/전용상품침대2.jpg" alt="벨드로 수납장 ss 침대">
+                        <p>벨드로 수납장 ss 침대<br>220,000원<br>상품 보러가기</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/전용상품침대3.jpg" alt="세텀 패밀리 침대">
+                        <p>세텀 패밀리 침대<br>1,220,000원<br>상품 보러가기</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/전용상품침대4.jpg" alt="갭 킹 볼드 침대">
+                        <p>갭 킹 볼드 침대<br>1,080,000원<br>상품 보러가기</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/전용상품침대5.jpg" alt="아치거울 퀸 틴 침대">
+                        <p>아치거울 퀸 틴 침대<br>1,580,000원<br>상품 보러가기</p>
+                    </a>
+                </li>
+
+                <li><a href="#">
+                        <img src="img/전용상품침대6.jpg" alt="이지 퀸 침대">
+                        <p>이지 퀸 침대<br>520,000원<br>상품 보러가기</p>
+                    </a>
+                </li>
+
+            </ul>
+
+            <ul class="m5chr">
+                <li><a href="#">
+                    <img src="img/상품의자1.png" alt="가나다 의자">
+                    <p>가나다 의자<br>80,000원<br>상품 보러가기</p>
+                </a>
+            </li>
+
+            <li><a href="#">
+                    <img src="img/상품의자2.png" alt="기린의자">
+                    <p>기린 의자<br>120,000원<br>상품 보러가기</p>
+                </a>
+            </li>
+
+            <li><a href="#">
+                    <img src="img/상품의자3.png" alt="고라니의자">
+                    <p>고라니 의자<br>105,000원<br>상품 보러가기</p>
+                </a>
+            </li>
+
+            <li><a href="#">
+                    <img src="img/상품의자4.png" alt="간다의자">
+                    <p>간다 의자<br>53,000원<br>상품 보러가기</p>
+                </a>
+            </li>
+
+            <li><a href="#">
+                    <img src="img/상품의자5.png" alt="상시의자">
+                    <p>상시 의자<br>32,000원<br>상품 보러가기</p>
+                </a>
+            </li>
+
+            <li><a href="#">
+                    <img src="img/상품의자6.png" alt="민의민의의자">
+                    <p>민의민의 의자<br>76,000원<br>상품 보러가기</p>
+                </a>
+            </li>
+            </ul>
+        </div>
+        <script src="main5list.js"></script>
+    </section>
+
+
+    <!-- main section 6 -->
+    <section id="main6">
+        <h2 class="blind">회사간략 정보, 유튜브</h2>
+
+        <div class="wrap" data-aos="fade-up">
+            <div class="snsbox">
+                <p>하이퍼니처는 1973년 시작하여<br>50년 전통의 가구제작 전문업체로써<br>오랜 경력의 기능장들이 모여<br>연구와 설계를 통한<br>
+                    높은 품질을 보증합니다.</p>
+
+                <div class="sns">
+                    <a href="https://www.kakaocorp.com/page/service/service/KakaoTalk" target="_blank"><img src="img/카톡.png" alt="kakao"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="img/인스타.png" alt="insta"></a>
+                    <a href="https://ko-kr.facebook.com/" target="_blank"><img src="img/페북.png" alt="facebook"></a>
+                    <a href="https://twitter.com/?lang=ko" target="_blank"><img src="img/트위터.png" alt="space x"></a>
+                </div>
+                <span>상담 및 문의</span>
+            </div>
+
+            <div class="youtube" data-aos="fade-up">
+                <iframe width="670" height="385" src="https://www.youtube.com/embed/UmNeQmg7CFI?si=_E13zUQJcYKWt-Nq" title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- notice -->
+    <section id="notice">
+        <h2 class="blind">공지사항, 고객센터</h2>
+
+        <div class="wrap">
+            <!-- 공지사항 -->
+            <div class="not">
+                <h3>공지사항</h3>
+                <ul>
+                    <li><a href="#">[공지] 하이퍼니처 시스템 점검 안내</a></li>
+                    <li><a href="#">[당첨자발표] 23.02.10일자 이벤트 당첨자 발표</a></li>
+                    <li><a href="#">[공지] 원목 수급 문제로 의자3제품 출고일 연기</a></li>
+                    <li><a href="#">[정보] 홈페이지 안내 이용</a></li>
+                </ul>
+            </div>
+            <!-- 고객센터 -->
+            <div class="cs">
+                <h3>고객센터</h3>
+                <ul>
+                    <li><a href="#">자주 찾는 질문</a></li>
+                    <li><a href="#">비회원 주문조회</a></li>
+                    <li><a href="#">1:1 문의</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">하이퍼니처 회원 혜택</a></li>
+                    <li><a href="#">입점문의</a></li>
+                    <li><a href="#">대리점 개설 문의</a></li>
+                </ul>
+                <h4>전화상담 - <a href="tel:16885678">1688-5678</a> / <a href="tel:16888765">1688-8765</a></h4>
+                <h5>A/S 신청, 추가부품 구매<br>서비스센터 - <a href="tel:15880101">1588-0101</a></h5>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 푸터 -->
+    <footer id="fot">
+        <h2 class="blind">website information</h2>
+
+        <div class="wrap">
+            <div class="infor">
+                <address>
+                    인천광역시 연수구 가구동 875 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><br class="mob">㈜하이퍼니처 대표 : 한재희</span><br>
+                    사업자등록번호 : 123-45-67899 <br>통신판매업신고 : 1997-인천연수-0101 <br>KEB하나은행 구매안전서비스 <br>
+                    <span>고객님은 안전거래를 위해 현금결제 시 저희 쇼핑몰에서 가입한 KEB하나은행으로<br class="pc">구매안전서비스를 이용하실 수 있습니다.</span>
+                </address>
+            </div>
+
+            <div class="map">
+                <ul>
+                    <li>하이퍼니처 &nbsp;&nbsp;&nbsp;본사</li>
+                    <li>하이퍼니처 &nbsp;&nbsp;&nbsp;공장</li>
+                    <li>하이퍼니처 직영점</li>
+                </ul>
+                <ul class="mapbtn">
+                    <li class="mbtn1"><button>위치보기</button></li>
+                    <li class="mbtn2"><button>위치보기</button></li>
+                    <li class="mbtn3"><button>위치보기</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrap">
+            <img src="img/logo.png" alt="logo 하이퍼니처">
+        </div>
+        
+        <!-- 본사 맵 -->
+        <div class="mbtn1map">
+            <button class="clobtn"><i class="xi-close-min"></i></button>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.200154854936!2d126.97879899703483!3d37.55034784480617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3d208be011b%3A0x596970b030e0b1c7!2z64-E6riw7JW8!5e0!3m2!1sko!2skr!4v1694587201749!5m2!1sko!2skr" 
+            width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        <!-- 공장 맵 -->
+        <div class="mbtn2map">
+            <button class="clobtn"><i class="xi-close-min"></i></button>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5167.72273176099!2d126.6182567153483!3d37.56013745303649!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7f26b00c047b%3A0x23570cb942a6f3d8!2z7KeA7JeY7KCV6rO1!5e0!3m2!1sko!2skr!4v1694587082459!5m2!1sko!2skr" 
+            width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        
+
+
+
+<script src="footermap.js"></script>
+    </footer>
+
+    <!-- 탑버튼 및 모달창 -->
+    <div class="alltopbtn pc">
+        <a href="#"><i class="xi-caret-up-min"></i></a><br>
+        <a href="#fot"><i class="xi-caret-down-min"></i></a><br>
+        <button class="modal"><i class="xi-truck"></i></button>
+    </div>
+    <div class="modalin">
+        <div class="backg"></div>
+        <div class="minner">
+            <p>택배관련 어쩌구저쩌구 모달팝업창입니다 그냥 그렇게 아시면 되고 아직까지 상세내용은 없읍니다.. <br><br><br><br><br><br><br>
+                택배관련 어쩌구저쩌구 모달팝업창입니다 그냥 그렇게 아시면 되고 아직까지 상세내용은 없읍니다..</p>
+        
+            <button class="alltopclo"><i class="xi-close-min"></i></button>
+        </div>
+    </div>
+    <script src="modal.js"></script>
+
+
+    <!-- AOS 스크립트 -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+    duration: 2000, 
+    // once: true,
+    disable: false, //모바일에서 작동 안하고싶을때
+});
+    </script>
+
+</body>
+
+</html>
+
